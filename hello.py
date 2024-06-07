@@ -33,7 +33,7 @@ def hello_world():
         db.session.add(todo)
         db.session.commit()
     allTodo=Todo.query.all()
-    return render_template('design.html',allTodo=allTodo)
+    return render_template('index.html',allTodo=allTodo)
 @app.route('/delete/<int:slno>')
 def delete(slno):
     todo=Todo.query.filter_by(slno=slno).first()
